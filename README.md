@@ -10,9 +10,16 @@
    ```bash
    python -m venv venv
    ```
-   #### Linux
+   * Linux: 
+   ```bash 
+   source venv/bin/activate
+   ```
+   * Windows: 
+   ```bash 
+   venv\Scripts\activate
+   ```
+   #
    ```bash
-   source venv/bin/activate   # Для Windows: `venv\Scripts\activate`
    pip install -r requirements.txt
    ```
    
