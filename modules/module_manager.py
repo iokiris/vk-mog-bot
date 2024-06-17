@@ -45,7 +45,7 @@ class ModuleManager:
                                 )
                         if event.text == self.prefix + 'help':
                             wrapped_info = f"🔧 Использование: \n {self.prefix}команда <действие> <аргументы> <флаги> \n"
-
+                            wrapped_info += f"\nСписок команд для вашего доступа ({who_called.access}):"
                             for m in self.modules:
                                 if m.access > who_called.access:
                                     continue

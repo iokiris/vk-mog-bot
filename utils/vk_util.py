@@ -20,7 +20,7 @@ class Timer:
     def __init__(self, req_limit: int = 3, time_limit: int = 60):
         self.recent_time: float = 0
         self.per_time: Dict[int, List[Union[int, float]]] = {}  # {user_id: [req_count, last_time]}
-        self.no_delay_persons: List[int] = [323588703]
+        self.no_delay_persons: List[int] = []
         self.req_limit: int = req_limit
         self.time_limit: int = time_limit
 

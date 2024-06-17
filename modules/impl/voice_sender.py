@@ -1,4 +1,5 @@
 from modules.module import Module
+from settings import config
 from utils.vk_util import vk, vk_timer, send_with_limit, parse_user, Timer, self_user
 from vk_api.longpoll import Event
 from threading import Thread
@@ -10,8 +11,6 @@ import json
 
 
 class VoiceSender(Module):
-
-    MAX_VOICE_COUNT = 15
 
     def __init__(self):
         super().__init__(
@@ -30,7 +29,7 @@ class VoiceSender(Module):
             always_on=True
         )
 
-        self.default_limit = 15
+        self.default_limit = config.MAX_VOICE_COUNT
         self.queue: set[int] = set()
         self.isBusy = False
         self.voices: set[str] = set()

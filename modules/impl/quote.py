@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 import concurrent.futures
 
 from modules.module import Module
+from settings import config
 from utils.vk_util import vk, get_token
 
 current_path = Path(__file__)
@@ -120,7 +121,7 @@ class Quote(Module):
         im.putalpha(self.prepare_mask(size, 4))
 
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            future = executor.submit(self.gen_quote, 'Цитаты великих людей', f'{text}', username, im)
+            future = executor.submit(self.gen_quote, config.QUOTE_TITLE_MESSAGE, f'{text}', username, im)
             quote_image = future.result()
 
         if quote_image is None:
